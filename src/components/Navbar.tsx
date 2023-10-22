@@ -6,8 +6,10 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 let tabs = [
-  { id: "home", label: "Home", href: "/" },
+  { id: "home", label: "Explore", href: "/" },
   { id: "popular", label: "Popular", href: "popular" },
+  { id: "genres", label: "Genres", href: "genres" },
+  { id: "manga", label: "Manga", href: "manga" },
 ];
 
 export default function HeadNavBar() {
@@ -26,7 +28,7 @@ export default function HeadNavBar() {
             onClick={() => setActiveTab(tab.id)}
             className={`${
               activeTab === tab.id ? "" : "hover:text-white/60"
-            } relative rounded-full px-3 py-1.5 text-lg font-semibold text-gray-200  `}
+            } relative rounded-full px-5 py-2.5 text-lg font-semibold text-gray-200  `}
             style={{
               WebkitTapHighlightColor: "transparent",
             }}
@@ -34,9 +36,9 @@ export default function HeadNavBar() {
             {activeTab === tab.id && (
               <motion.span
                 layoutId="navpill"
-                className="absolute inset-0 z-10 bg-gray-200 mix-blend-difference"
-                style={{ borderRadius: 9999 }}
-                transition={{ type: "spring", bounce: 0.3, duration: 0.5 }}
+                className="absolute inset-0 z-10 bg-gray-200/40 mix-blend-lighte shadow-[2px_5px_5px_rgba(179,250,240)]"
+                style={{ borderRadius: 10 }}
+                transition={{ type: "spring", bounce: 0.4, duration: 0.5 }}
               />
             )}
             {tab.label}
@@ -46,4 +48,3 @@ export default function HeadNavBar() {
     </div>
   );
 }
-
