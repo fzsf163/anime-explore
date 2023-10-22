@@ -1,3 +1,5 @@
+import TopAnime from "@/components/TopAnime";
+
 async function getData() {
   const res = await fetch(
     "https://api.jikan.moe/v4/anime?order_by=popularity ",
@@ -157,28 +159,17 @@ export default async function Popular() {
 
   return (
     <main className="text-left mt-4 ">
-      <div className="flex flex-col items-start justify-center space-y-3 w-fit mx-auto ">
+      <section className="flex items-center justify-center flex-wrap gap-4">
         {animeData.map((anime) => {
           return (
-            <div key={anime.mal_id} className="px-3 py-4 space-y-4">
-              <h1 className="font-bold text-4xl">Title: {anime.title}</h1>
-              <h1 className="font-bold text-3xl">
-                {(anime.year = anime.year ?? "")}
-              </h1>
-              <h1 className="font-bold text-3xl">
-                {(anime.episodes = anime.episodes ?? "No idea")}
-              </h1>
-              <h1 className="font-bold text-3xl">{anime.type}</h1>
-              <img
-                src={anime.images.jpg.image_url}
-                alt="anime image"
-                width={400}
-                height={400}
-              />
-            </div>
+            <TopAnime
+              key={anime.mal_id}
+              img={anime.images.jpg.image_url}
+              title={anime.title}
+            ></TopAnime>
           );
         })}
-      </div>
+      </section>
     </main>
   );
 }
