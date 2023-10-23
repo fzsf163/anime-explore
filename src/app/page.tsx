@@ -1,9 +1,13 @@
+import Footer from "@/components/Footer";
 import TopAnime from "@/components/TopAnime";
 
 async function getData() {
-  const res = await fetch("https://api.jikan.moe/v4/top/anime?sfw&filter=airing", {
-    next: { revalidate: 1 },
-  });
+  const res = await fetch(
+    "https://api.jikan.moe/v4/top/anime?sfw&filter=airing",
+    {
+      next: { revalidate: 1 },
+    }
+  );
   const data = res.json();
   return data;
 }
@@ -153,18 +157,16 @@ export default async function Home() {
   const airing = data.data;
   // console.log(airing[0]);
   return (
-    <div>
-      <section className="flex items-center justify-center flex-wrap gap-4">
-        {airing.map((air) => {
-          return (
-            <TopAnime
-              key={air.mal_id}
-              img={air.images.jpg.image_url}
-              title={air.title}
-            ></TopAnime>
-          );
-        })}
-      </section>
-    </div>
+    <section className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 p-5 w-fit">
+      {airing.map((air) => {
+        return (
+          <TopAnime
+            key={air.mal_id}
+            img={air.images.jpg.image_url}
+            title={air.title}
+          ></TopAnime>
+        );
+      })}
+    </section>
   );
 }
