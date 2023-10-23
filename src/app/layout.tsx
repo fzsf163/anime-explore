@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Serif } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 // fonts
 const noto_serif = Noto_Serif({ subsets: ["latin"] });
@@ -18,11 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-slate-950 text-stone-100">
-      <body className={noto_serif.className}>
+    <html lang="en">
+      <body className={`${noto_serif.className} bg-slate-950 text-stone-100`}>
         <Navbar></Navbar>
-
-        {children}
+        <main>{children}</main>
+        <Footer></Footer>
       </body>
     </html>
   );
