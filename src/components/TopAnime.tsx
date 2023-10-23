@@ -15,13 +15,13 @@ export default function TopAnime({ key, title, img }: Props) {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       key={key}
-      className="w-fit mx-auto space-y-5 mt-6"
+      className="w-fit  space-y-5 border p-4 rounded-md border-sky-100/30"
     >
       <h1>{title}</h1>
       <img
         src={img}
         alt="image"
-        className="aspect-[1/2] max-h-[500px]"
+        className="aspect-[16/12] max-h-[500px] object-cover rounded-md"
         width={500}
         height={600}
       />
