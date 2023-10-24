@@ -159,7 +159,7 @@ export default async function Popular() {
 
   return (
     <main className="text-left mt-4 ">
-      <section className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 md:max-h-[300px] sm:grid-cols-1 gap-10 p-5 w-fit ">
+      <section className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 p-5 w-fit ">
         {animeData.map((anime) => {
           return (
             <TopAnime
