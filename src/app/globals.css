@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-bg-pop {
+  background-image: url(../../public/bg-pop.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
