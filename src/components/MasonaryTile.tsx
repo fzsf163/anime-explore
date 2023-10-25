@@ -19,7 +19,7 @@ export default function MasonaryTile({ data }: OnlyData) {
   };
   return (
     <LazyMotion features={domAnimation}>
-      <div className=" grid grid-cols-3 gap-10 max-w-fit  max-h-max items-center justify-items-center">
+      <div className=" flex flex-wrap items-baseline justify-center max-w-fit">
         {data.map((anime) => {
           return (
             <section key={anime.mal_id}>
