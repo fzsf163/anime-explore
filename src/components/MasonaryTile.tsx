@@ -1,13 +1,13 @@
 "use client";
 
 import { OnlyData } from "@/types";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import { LazyMotion, domAnimation } from "framer-motion";
-import { useState } from "react";
-export default function MasonaryTile({ data }: OnlyData) {
-  const [isHovered, setHovered] = useState(false);
+import TileImage from "./TileImage";
 
-  const fadein = {
+export default function MasonaryTile({ data }: OnlyData) {
+  // console.log(data[0]);
+  const fadein: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -19,40 +19,22 @@ export default function MasonaryTile({ data }: OnlyData) {
   };
   return (
     <LazyMotion features={domAnimation}>
-      <motion.div
-        layout
-        className=" grid grid-cols-3 gap-10 max-w-fit  max-h-max items-center justify-items-center"
-        variants={fadein}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-      >
-        {/* <h1 className="font-bold text-4xl p-6">{props.title}</h1> */}
-        {data.map((each) => {
+      <div className=" grid grid-cols-3 gap-10 max-w-fit  max-h-max items-center justify-items-center">
+        {data.map((anime) => {
           return (
-            <motion.section
-              key={each.mal_id}
-              variants={fadein}
-              onTap={() => setHovered((x) => !x)}
-            >
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1.3 } }}
-              >
-                <h1>{each.title}</h1>
-                <h1>{each.title_japanese}</h1>
-              </motion.div>
-              <motion.img
-                src={each.images.webp.large_image_url}
-                alt={each.title}
-                width={500}
-                height={400}
-                className="w-fit h-max object-cover rounded-md shadow-lg shadow-slate-700 "
-              />
-            </motion.section>
+            <section key={anime.mal_id}>
+              <TileImage
+                variant={fadein}
+                title={anime.title}
+                mal_id={anime.mal_id}
+                img={anime.images.webp.large_image_url}
+                title_english={anime.title_english}
+                title_japanese={anime.title_japanese}
+              ></TileImage>
+            </section>
           );
         })}
-      </motion.div>
+      </div>
     </LazyMotion>
   );
 }
