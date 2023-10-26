@@ -25,7 +25,7 @@ export default async function Home() {
   return (
     <main>
       <section className="flex items-start justify-center bg-bg-pop">
-        <div className="w-fit sticky top-10  ms-5">
+        <div className="w-fit sticky top-16 ms-5 mt-5 me-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="50"
