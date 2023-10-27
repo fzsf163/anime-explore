@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${noto_serif.className} bg-slate-950 text-stone-100`}>
+      <body className={`${noto_serif.className} bg-orange-500 text-stone-100`}>
         <Navbar></Navbar>
         <main>{children}</main>
         <Footer></Footer>

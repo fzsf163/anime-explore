@@ -27,7 +27,7 @@ export default function HeadNavBar() {
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className={`${
-              activeTab === tab.id ? "" : "hover:text-white/60"
+              activeTab === tab.id ? "" : "hover:text-white/50"
             } relative rounded-full px-5 py-2.5 text-lg font-semibold text-gray-200  `}
             style={{
               WebkitTapHighlightColor: "transparent",
@@ -36,7 +36,7 @@ export default function HeadNavBar() {
             {activeTab === tab.id && (
               <motion.span
                 layoutId="navpill"
-                className="absolute inset-0 z-10 bg-gray-200/40 mix-blend-lighte shadow-[2px_5px_5px_rgba(179,250,240)]"
+                className="absolute inset-0 z-10 bg-blue-400/90 mix-blend-lighten shadow-[2px_5px_5px_rgba(179,250,240)]"
                 style={{ borderRadius: 10 }}
                 transition={{ type: "spring", bounce: 0.4, duration: 0.5 }}
               />

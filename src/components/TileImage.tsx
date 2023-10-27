@@ -51,7 +51,7 @@ export default function TileImage({ ...porps }: Props) {
           <motion.h1
             layout
             layoutId="textclose"
-            className={`py-2 px-4 bg-black rounded-md text-lg font-mono font-bold absolute ${
+            className={`py-2 px-4 bg-green-600  rounded-md text-lg font-mono font-bold absolute ${
               isTapped ? "text-center" : "text-left"
             }`}
           >
