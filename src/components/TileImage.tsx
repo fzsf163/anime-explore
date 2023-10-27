@@ -42,19 +42,16 @@ export default function TileImage({ ...porps }: Props) {
           initial={{
             height: 0,
             opacity: 0,
-            backgroundColor: "orange",
           }}
           animate={{
             height: isMouse ? "fit-content" : 0,
             opacity: isMouse ? 1 : 0,
-            backgroundColor: isTapped ? "green" : "orange",
           }}
-          className=" rounded-xl"
         >
           <motion.h1
-          layout
-          layoutId="textclose"
-            className={`py-2 px-4 text-lg font-mono font-bold ${
+            layout
+            layoutId="textclose"
+            className={`py-2 px-4 bg-black rounded-md text-lg font-mono font-bold absolute ${
               isTapped ? "text-center" : "text-left"
             }`}
           >
