@@ -19,12 +19,12 @@ export default function MasonaryTile({ data }: OnlyData) {
   };
   return (
     <LazyMotion features={domAnimation}>
-      <div className="columns-3 break-before-column">
+      <div className="columns-3 ">
         {data.map((anime) => {
           return (
             <section
               key={anime.mal_id}
-              className=" h-auto mb-5  break-inside-avoid-column"
+              className=" h-fit mb-2 isolate break-inside-avoid-column"
             >
               <TileImage
                 variant={fadein}
