@@ -19,10 +19,13 @@ export default function MasonaryTile({ data }: OnlyData) {
   };
   return (
     <LazyMotion features={domAnimation}>
-      <div className=" grid grid-cols-3 justify-items-center place-items-start w-fit h-fit divide-blue-500/30 divide-double divide-x-2">
+      <div className="columns-3 break-before-column">
         {data.map((anime) => {
           return (
-            <section key={anime.mal_id}>
+            <section
+              key={anime.mal_id}
+              className=" h-auto mb-5  break-inside-avoid-column"
+            >
               <TileImage
                 variant={fadein}
                 title={anime.title}
